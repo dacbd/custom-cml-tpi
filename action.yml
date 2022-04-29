@@ -25,6 +25,7 @@ runs:
       with:
         go-version: '1.17.x'
     - name: Hack new tpi
+      shell: bash
       run: |
         pushd terraform-provider-iterative
         make build
@@ -36,6 +37,7 @@ runs:
         ref: ${{ inputs.cml }}
         path: cml
     - name: Hack new cml
+      shell: bash
       run: |
        pushd cml
        npm install
@@ -44,5 +46,7 @@ runs:
        sed -i 's/return template;/console.log(template);return template;/g' src/terraform.js
        popd
        sudo ln -s ./cml/bin/cml.js /usr/local/bin/cml 
-    - run: |
+    - name: debug
+      shell: bash
+      run: |
         which cml
