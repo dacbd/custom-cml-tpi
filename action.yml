@@ -45,7 +45,7 @@ runs:
        sed -i 's/source = "iterative\/iterative"/source = "github.com\/iterative\/iterative"/g' src/terraform.js
        sed -i 's/return template;/console.log(template);return template;/g' src/terraform.js
        popd
-       sudo ln -s ./cml/bin/cml.js /usr/local/bin/cml 
+       sudo ln -s ./cml/bin/cml.js /usr/bin/cml 
     - name: debug
       shell: bash
       run: |
