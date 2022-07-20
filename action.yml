@@ -44,4 +44,5 @@ runs:
        sed -i "s/default: '>= 0.9.10'/default: ''/g" bin/cml/runner.js
        sed -i 's/source = "iterative\/iterative"/source = "github.com\/iterative\/iterative"/g' src/terraform.js
        sed -i 's/return template;/console.log(template);return template;/g' src/terraform.js
+       npm install --global .
        popd
